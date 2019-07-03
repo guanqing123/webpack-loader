@@ -1,4 +1,5 @@
 import './layer.less';
+import './layer.scss';
 import html from './layer.html';
 import tpl  from './layer.tpl';
 

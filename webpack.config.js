@@ -71,9 +71,38 @@ module.exports = {
                         }
                     },
                     {
-                        loader: 'less-loader', // compiles Less to CSS
+                        loader: 'less-loader' // compiles Less to CSS
                     }
                 ],
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader',
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 1000,
+                            name: 'assets/[name]-[hash:5].[ext]'
+                        }
+                    },
+                    {
+                        loader: 'image-webpack-loader'
+                    }
+                ]
             }
         ]
     },
